@@ -13,12 +13,12 @@ const Experience = () => (
       <div className="group">
         <div className="position txt-hover">Banner design <span>HTML&CSS Developer</span></div>
         <div className="company txt-hover">Untimate Digital Service (Bizidea)</div>
-        <div className="since txt-hover">2014-2015</div>
+        <div className="since txt-hover">2015-2018</div>
       </div>
       <div className="group">
         <div className="position txt-hover">Front End Developer</div>
         <div className="company txt-hover">Lqid360 (Scale360)</div>
-        <div className="since txt-hover">2014-2015</div>
+        <div className="since txt-hover">2018-2019</div>
       </div>
     </div>
   </div>
