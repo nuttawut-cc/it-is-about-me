@@ -1,0 +1,50 @@
+@import "../scss/variables";
+
+.experience {
+  position: absolute;
+  top: 49rem;
+  left: 0;
+  z-index: 1;
+
+  .heading {
+    font-size: $fontSizeM;
+    padding-left: 2rem;
+  }
+
+  .position {
+    font-size: 3rem;
+
+    span {
+      color: $subColor;
+    }
+  }
+
+  .since,
+  .company {
+    color: $dropGrey;
+  }
+
+  .wrapper {
+    .group {
+      position: relative;
+
+      div {
+        &:nth-child(2) {
+          padding-left: 3rem;
+        }
+
+        &:last-child {
+          padding-left: 6rem;
+        }
+      }
+
+      &:last-child {
+        padding-left: 8rem;
+      }
+    }
+
+    .group + .group {
+      margin-top: 1rem;
+    }
+  }
+}

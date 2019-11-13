@@ -1,0 +1,70 @@
+@import "../scss/variables";
+
+.skill {
+  position: absolute;
+  top: 13rem;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  max-width: 58rem;
+  padding-right: 6rem;
+
+  .hl {
+    color: $subColor;
+  }
+
+  .txt25 {
+    font-size: 2.5rem;
+  }
+
+  .txt30 {
+    font-size: 3rem;
+  }
+
+  .txt35 {
+    font-size: 3.5rem;
+  }
+
+  .txt50 {
+    font-size: 5rem;
+  }
+
+  > div + div {
+    margin-top: 1rem;
+  }
+
+  .javascript,
+  .version-control,
+  .html,
+  .other {
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div {
+      padding: 1rem;
+      text-align: center;
+      line-height: 1;
+      position: relative;
+    }
+  }
+
+  .javascript {
+    font-size: 3rem;
+
+    div {
+      align-self: center;
+      padding: 1rem;
+    }
+  }
+
+  .html,
+  .version-control {
+    width: 50%;
+  }
+
+  .other {
+    padding: 0 7rem;
+  }
+}

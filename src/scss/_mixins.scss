@@ -1,0 +1,7 @@
+@mixin useAnimate($name, $duration, $timingFn, $delay, $fillMode) {
+  animation-name: $name;
+  animation-fill-mode: $fillMode;
+  animation-timing-function: $timingFn;
+  animation-duration: #{($duration or 0.3) +s};
+  animation-delay: #{($delay or 0)+s};
+}

@@ -1,0 +1,71 @@
+@import '../scss/variables';
+
+.main {
+  .container {
+    background-image: url("../images/me2.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto 86vh;
+  }
+
+  .contact {
+    position: absolute;
+    bottom: 9vh;
+    right: 0;
+    z-index: 1000;
+    padding-right: 10rem;
+
+    .tel {
+      color: $dropGrey;
+      text-shadow: $txtShadow;
+      letter-spacing: 0.2em;
+      position: relative;
+      top: 0.6rem;
+    }
+
+    .tel,
+    .socials,
+    .socials .icon {
+      float: left;
+      display: inline-block;
+    }
+
+    .socials {
+      margin-left: 4rem;
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        opacity: 0.85;
+        transform: scale(1);
+
+        &:hover {
+          opacity: 1;
+          transform: scale(0.9);
+        }
+
+        &:first-child {
+          background-image: url("../images/github.png");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 2.8rem auto;
+        }
+
+        &:last-child {
+          background-image: url("../images/line.png");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 2.8rem auto;
+        }
+      }
+
+      .icon + .icon {
+        margin-left: 3rem;
+        position: relative;
+        top: -1.2rem;
+      }
+    }
+  }
+}

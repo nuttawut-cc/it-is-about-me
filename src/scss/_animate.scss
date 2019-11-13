@@ -1,0 +1,38 @@
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  90% {
+    transform: translateY(-6%);
+  }
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceOut {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-6%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fadeTop {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,28 @@
+@import "../scss/variables";
+
+.name {
+  font-size: $fontSizeL;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  z-index: 1;
+
+  .heading {
+    line-height: 1;
+  }
+
+  .first-name {
+    padding-left: 9rem;
+  }
+
+  .last-name {
+    padding-left: 7rem;
+  }
+
+  .age {
+    color: $subColor;
+    font-size: 8.5rem;
+    padding-top: 1rem;
+    padding-left: 12rem;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../scss/variables";
+
+.education {
+  position: absolute;
+  top: 35rem;
+  left: 0;
+  z-index: 1;
+
+  .heading {
+    font-size: $fontSizeM;
+    padding-left: 5rem;
+  }
+
+  .branch {
+    font-size: 3rem;
+    padding-left: 1rem;
+  }
+
+  .university {
+    padding-left: 5rem;
+    color: $dropGrey;
+  }
+}

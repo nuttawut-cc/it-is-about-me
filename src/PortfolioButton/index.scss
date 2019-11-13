@@ -1,0 +1,93 @@
+@import "../scss/variables";
+@import "../scss/animate";
+@import "../scss/mixins";
+
+.portfolio-button {
+  width: 22.5rem;
+  height: 6rem;
+  position: absolute;
+  right: 19%;
+  bottom: 26vh;
+  z-index: 1200;
+  font-size: 4rem;
+  line-height: 6rem;
+  color: #fff;
+  background: $subColor;
+  box-shadow: $btnShadow;
+  cursor: pointer;
+
+  &:hover {
+    font-style: italic;
+  }
+
+  .wrapper,
+  &.active {
+    pointer-events: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    z-index: 0;
+    transition: all;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transform: scale(1);
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@function calcBackwards($i) {
+  @return #{((10 * $i) - (5 * ($i - 1))) / 130};
+}
+
+@function calcForwards($i) {
+  @return #{((10 * (9 - ($i - 1))) - (5 * (9 - $i))) / 130};
+}
+
+
+body {
+  &.active {
+    .portfolio-button {
+      &.bounce-in {
+        .wrapper {
+          @for $i from 1 through 9 {
+            div:nth-of-type(#{$i}) {
+              @include useAnimate(bounceIn, 0.4, ease-in-out, calcBackwards($i), backwards);
+            }
+          }
+        }
+      }
+
+      &.bounce-out {
+        .wrapper {
+          @for $i from 1 through 9 {
+            div:nth-of-type(#{$i}) {
+              @include useAnimate(bounceOut, 0.4, ease-in-out, calcForwards($i), forwards);
+            }
+          }
+        }
+
+        &:after {
+          transition-delay: 0.6s;
+          transform: scale(50);
+          background: lighten($subColor, 0%);
+        }
+      }
+    }
+  }
+}

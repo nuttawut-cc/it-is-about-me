@@ -1,0 +1,36 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: $fontSizeS;
+  font-family: "McLaren", cursive;
+  color: $mainColor;
+  background: $bgColor;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#canvas {
+  display: none;
+}
+
+.txt-hover {
+  text-shadow: $txtShadow;
+
+  &:hover {
+    font-style: italic;
+  }
+}
