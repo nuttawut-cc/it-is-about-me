@@ -13,7 +13,7 @@ const App = () => (
         <Route path="/portfolio" component={PortfolioPage} />
       </Switch>
     </HashRouter>
-    <NoiseBg />
+    {/* <NoiseBg /> */}
     <Cursor />
   </>
 )

@@ -4,7 +4,7 @@ import Name from '../Name'
 import PortfolioButton from '../PortfolioButton'
 import Education from '../Education'
 import Experience from '../Experience'
-import Skill from '../Skill'
+import Skills from '../Skills'
 import Layout from '../Layout'
 import './index.scss'
 
@@ -24,7 +24,7 @@ const MainPage = (props) => {
       <Name />
       <Education />
       <Experience />
-      <Skill />
+      <Skills />
       <PortfolioButton onClick={onEntertoPortfiloPage} />
       <div className="contact clearfix">
         <div className="tel txt-hover">0618815537</div>

@@ -2,9 +2,21 @@ import React from 'react'
 import './index.scss'
 
 const Skill = () => (
-  <div className="skill">
+  <div className="skill clearfix">
     <div className="javascript">
-      <div style={{ flex: '0 0 100%' }}>
+      <div style={{
+        flex: '0 0 50%',
+        top: '-0.5rem',
+        textAlign: 'right',
+        paddingRight: '2rem'
+      }}>
+        <span className="txt35 txt-hover">Skills</span>
+      </div>
+      <div style={{
+        flex: '0 0 50%',
+        textAlign: 'left',
+        paddingLeft: '2rem'
+      }}>
         <span className="txt25 txt-hover">Jquery</span>
       </div>
       <div style={{ flex: '0 0 40%', top: '-1.5rem', left: '1.5rem' }}>
