@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import './index.scss'
 
-const Cursor = () => {
+const Cursor = (props) => {
+  const { disabled } = props
   const cursorRef = useRef()
+
   const onMouseMove = (e) => {
     const axisX = e.clientX
     const axisY = e.clientY
@@ -14,11 +16,13 @@ const Cursor = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('mousemove', onMouseMove)
-    return () => window.removeEventListener('mousemove', onMouseMove)
+    if (!disabled) {
+      window.addEventListener('mousemove', onMouseMove)
+      return () => window.removeEventListener('mousemove', onMouseMove)
+    }
   })
 
-  return createPortal(
+  return !disabled && createPortal(
     <div ref={cursorRef} className="cursor" />,
     document.body
   )

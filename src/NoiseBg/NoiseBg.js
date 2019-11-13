@@ -2,9 +2,11 @@ import React, { useRef, useEffect } from 'react'
 import noiseDataUrl from './noiseDataUrl'
 import './index.scss'
 
-const NoiseBg = () => {
+const NoiseBg = (props) => {
+  const { disabled } = props
   const noiseBgRef = useRef()
 
+  let animationTimeOut
   const setupNoise = () => {
     let frame = 0
     const keyframeController = () => {
@@ -14,12 +16,14 @@ const NoiseBg = () => {
         frame++
       }
 
-      noiseBgRef.current.style.backgroundImage = noiseDataUrl[frame]
+      if (noiseBgRef.current) {
+        noiseBgRef.current.style.backgroundImage = noiseDataUrl[frame]
+      }
     }
 
     const startNoiseAnimation = () => {
       keyframeController(frame)
-      setTimeout(() => {
+      animationTimeOut = setTimeout(() => {
         window.requestAnimationFrame(startNoiseAnimation)
       }, 100)
     }
@@ -27,9 +31,15 @@ const NoiseBg = () => {
     startNoiseAnimation()
   }
 
-  useEffect(setupNoise, [])
+  useEffect(() => {
+    clearTimeout(animationTimeOut)
 
-  return <div ref={noiseBgRef} className="noise-bg" />
+    if (!disabled) {
+      setupNoise()
+    }
+  }, [disabled])
+
+  return !disabled && <div ref={noiseBgRef} className="noise-bg" />
 }
 
 export default NoiseBg
