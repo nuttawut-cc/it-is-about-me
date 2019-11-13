@@ -20,20 +20,23 @@ const MainPage = (props) => {
   }
 
   return (
-    <Layout className={classnames('main', { active: isActive })}>
-      <Name />
-      <Education />
-      <Experience />
-      <Skills />
-      <PortfolioButton onClick={onEntertoPortfiloPage} />
-      <div className="contact clearfix">
-        <div className="tel txt-hover">0618815537</div>
-        <div className="socials">
-          <a target="_blank" href="https://github.com/nuttawut-cc" className="icon github linked" />
-          <a target="_blank" href="http://line.me/ti/p/~woodycatty" className="icon line linked" />
+    <>
+      <Layout className={classnames('main', { active: isActive })}>
+        <Name />
+        <Education />
+        <Experience />
+        <Skills />
+        <PortfolioButton onClick={onEntertoPortfiloPage} />
+        <div className="contact clearfix">
+          <div className="tel txt-hover">0618815537</div>
+          <div className="socials">
+            <a target="_blank" href="https://github.com/nuttawut-cc" className="icon github linked" />
+            <a target="_blank" href="http://line.me/ti/p/~woodycatty" className="icon line linked" />
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+      <div className="reponsive-bg" />
+    </>
   )
 }
 

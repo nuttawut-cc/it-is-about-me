@@ -185,7 +185,8 @@
   }
 
   .portfolio-button {
-    display: none;
+    display: inline-block;
+    margin-top: 5rem;
   }
 
   .page-wrapper {
@@ -193,9 +194,8 @@
       height: auto;
       max-width: 100%;
       padding: 15px 15px 25px 12rem;
-      background-attachment: fixed;
-      background-position: 5rem bottom;
-      background-size: auto 90vh;
+      background: rgba(51, 4, 125, 0.65);
+      text-align: center;
     }
   }
 
@@ -280,6 +280,44 @@
   .noise-bg {
     display: none;
   }
+
+  .reponsive-bg {
+    display: block;
+    background-size: auto 90vh;
+    background-position: 5rem bottom;
+  }
+
+  .portfolio {
+    .page-wrapper {
+      .container {
+        padding: 15px 15px 25px 15px;
+      }
+    }
+
+    .heading {
+      font-size: 8rem;
+    }
+
+    .content {
+      margin-top: 0;
+    }
+
+    .logos {
+      padding: 0 5rem;
+
+      > div {
+        top: 0 !important;
+
+        div {
+          top: 0 !important;
+          padding: 2rem;
+          width: 100%;
+          max-width: 50% !important;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -324,6 +362,22 @@
   .main {
     .contact {
       font-size: 2.5rem;
+    }
+  }
+
+  .reponsive-bg {
+    display: block;
+    background-size: auto 80vh;
+    background-position: -10rem bottom;
+  }
+
+  .portfolio {
+    .heading {
+      font-size: 8rem;
+    }
+
+    .logos {
+      padding: 0 2rem;
     }
   }
 }
