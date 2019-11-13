@@ -36,10 +36,17 @@ const config = {
       },
       {
         test: /\.(jpg|png)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 80000
-        }
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              pngquant: {
+                quality: [0.3, 0.5]
+              }
+            }
+          }
+        ]
       }
     ]
   },
