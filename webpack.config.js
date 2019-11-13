@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const config = {
   entry: [
@@ -73,7 +74,10 @@ if (process.env.NODE_ENV === 'production') {
   config.module.rules[1].use[0] = MiniCssExtractPlugin.loader
 
   config.plugins.push(
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css'
+    }),
+    new OptimizeCssAssetsPlugin()
   )
 }
 
